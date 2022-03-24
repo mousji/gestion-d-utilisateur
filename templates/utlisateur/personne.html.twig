@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Personnage
+{% endblock %}
+
+{% block body %}
+	<h1>Liste de personnage
+	</h1>
+
+	<p>
+		pesudo :
+		{{ pesudo }}
+	</p>
+	<p>
+		age :
+		{{ age }}
+	</p>
+	<p>
+		force :
+		{{ carac.force }}
+	</p>
+
+	<p>
+		intel :
+		{{ carac.intel }}
+	</p>
+
+
+	<p>
+		poid :
+		{{ carac.poid }}
+	</p>
+
+
+{% endblock %}

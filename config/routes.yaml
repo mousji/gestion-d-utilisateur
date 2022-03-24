@@ -1,3 +1,17 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+
+
+app_utlisateur:
+    path: /
+    controller: App\Controller\UtlisateurController::index
+
+
+
+app_personne:
+    path: /personne
+    controller: App\Controller\UtlisateurController::personne
+
+
