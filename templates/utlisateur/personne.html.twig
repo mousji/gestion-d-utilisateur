@@ -8,29 +8,51 @@
 	<h1>Liste de personnage
 	</h1>
 
-	<p>
-		pesudo :
-		{{ pesudo }}
-	</p>
-	<p>
-		age :
-		{{ age }}
-	</p>
-	<p>
-		force :
-		{{ carac.force }}
-	</p>
+	<table class="table">
+		<tr class="thead-dark">
+			<th>Image</th>
+			<th>Nom</th>
+			<th>age</th>
+			<th>Sexe</th>
 
-	<p>
-		intel :
-		{{ carac.intel }}
-	</p>
+			<th>force</th>
+			<th>intelligence</th>
+			<th>poid</th>
+		</tr>
+		<tr>
+			{% for prsn in p %}
 
+				<td>
+					<img src="{{ asset('/images/personnages/' ~ prsn.nom ~ '.png') }}">
+				</td>
 
-	<p>
-		poid :
-		{{ carac.poid }}
-	</p>
+				<td>
+					{{ prsn.nom }}
+				</td>
+				<td>
+					{{ prsn.age }}
+				</td>
+				<td>
+					{% if prsn.sexe %}
+						Homme
 
+					{% else %}
+						Femme
 
-{% endblock %}
+					{% endif %}
+				</td>
+
+				<td>
+					{{ prsn.carac.force }}
+				</td>
+				<td>
+					{{ prsn.carac.intel }}
+				</td>
+				<td>
+					{{ prsn.carac.poid }}
+				</td>
+			</tr>
+		</tr>
+	{% endfor %}
+
+</table>{% endblock %}

@@ -16,16 +16,50 @@ class UtlisateurController extends AbstractController
         ]);
     }
 
-    #[Route('/personne', name: 'app_personne')]
+    #[Route('/personnne', name: 'app_personne')]
     public function personne(): Response
     {
-        return $this->render('utlisateur/personne.html.twig', [
-            'pesudo' => 'medousji',
+
+        $p1 = [
+            'nom' => 'medousji',
             'age' => '27',
+            'sexe' => true,
             'carac' => [
                 'force' => '5', 'intel' => '5', 'poid' => '80 kg'
 
             ]
+        ];
+
+
+        $p2 = [
+            'nom' => 'ahmed',
+            'age' => '24',
+            'sexe' => true,
+            'carac' => [
+                'force' => '5', 'intel' => '4', 'poid' => '90 kg'
+
+            ]
+        ];
+
+        $p3 = [
+            'nom' => 'ahlem',
+            'age' => '24',
+            'sexe' => false,
+            'carac' => [
+                'force' => '4', 'intel' => '9', 'poid' => '70 kg'
+
+            ]
+        ];
+
+
+
+        $p = [
+            "p1" => $p1, "p2" => $p2, "p3" => $p3
+        ];
+
+
+        return $this->render('utlisateur/personne.html.twig', [
+            "p" => $p
         ]);
     }
 }
