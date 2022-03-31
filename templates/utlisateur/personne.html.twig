@@ -55,4 +55,53 @@
 		</tr>
 	{% endfor %}
 
-</table>{% endblock %}
+</table>
+<h1>Liste de personnage avec POO Symfony 5
+</h1>
+
+<table class="table">
+	<tr class="thead-dark">
+		<th>Image</th>
+		<th>Nom</th>
+		<th>age</th>
+		<th>Sexe</th>
+
+		<th>force</th>
+		<th>intelligence</th>
+		<th>poid</th>
+	</tr>
+	<tr>
+		{% for pr in persone %}
+
+			<td>
+				<img src="{{ asset('/images/personnages/' ~ pr.nom ~ '.png') }}">
+			</td>
+
+			<td>
+				{{ pr.nom }}
+			</td>
+			<td>
+				{{ pr.age }}
+			</td>
+			<td>
+				{% if pr.sexe %}
+					Homme
+
+				{% else %}
+					Femme
+
+				{% endif %}
+			</td>
+
+			<td>
+				{{ pr.carac.force }}
+			</td>
+			<td>
+				{{ pr.carac.intel }}
+			</td>
+			<td>
+				{{ pr.carac.poid }}
+			</td>
+		</tr>
+	</tr>
+{% endfor %}{% endblock %}

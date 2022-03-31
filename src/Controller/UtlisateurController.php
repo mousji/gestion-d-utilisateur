@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Persone;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -57,9 +58,11 @@ class UtlisateurController extends AbstractController
             "p1" => $p1, "p2" => $p2, "p3" => $p3
         ];
 
-
+        Persone::createpersone();
         return $this->render('utlisateur/personne.html.twig', [
-            "p" => $p
+            "p" => $p,
+
+            "persone" => Persone::$personne
         ]);
     }
 }
