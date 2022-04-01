@@ -65,4 +65,21 @@ class UtlisateurController extends AbstractController
             "persone" => Persone::$personne
         ]);
     }
+
+
+    #[Route('/details/{nom}', name: 'app_details')]
+    public function details($nom): Response
+    {
+
+        Persone::createpersone();
+        $details = Persone::getdetailsParNom($nom);
+
+        return $this->render('utlisateur/details.html.twig', [
+
+
+
+            "details"  => $details
+
+        ]);
+    }
 }

@@ -39,6 +39,18 @@ class Persone
         ]);
     }
 
+    public static function getdetailsParNom($nom)
+
+    {
+
+
+        foreach (self::$personne as $details) {
+
+            if (strtolower($details->nom) === $nom)
+                return $details;
+        }
+    }
+
 
     // $p1 = [
     //     'nom' => 'medousji',
@@ -49,6 +61,9 @@ class Persone
 
     //     ]
     // ];
+
+
+
 
 
 }

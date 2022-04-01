@@ -15,3 +15,7 @@ app_personne:
     controller: App\Controller\UtlisateurController::personne
 
 
+app_details:
+    path: /details/{nom}
+    controller: App\Controller\UtlisateurController::details
+

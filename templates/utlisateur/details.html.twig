@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Details
+{% endblock %}
+
+{% block body %}
+	<h1>
+Details de {{ details.nom }}  
+	</h1>
+
+    <div class="bloc-details">
+
+    <div class="container">
+    <div class="row">
+
+    <div class="col-2">
+
+    <img src="{{ asset('/images/personnages/' ~ details.nom ~ '.png') }}">
+
+    </div>
+
+    <div class="col">
+   <div> Nom : {{ details.nom }}  </div>
+
+    <div>
+        {% if  details.sexe %}
+
+       Sexe:  Homme
+
+          {% else %}
+
+         Sexe:   Femme
+
+       {% endif %}
+    
+     </div>
+
+      <div> Age : {{details.age }}</div>
+
+     <h3> Les caractéristique </h3>
+
+     <ul>
+      <li> Force :{{ details.carac.force }} </li>
+      <li> Intelligence :{{ details.carac.intel }} </li>
+      <li> Poid :{{ details.carac.poid }} </li>
+
+
+
+     </ul>
+
+
+
+
+
+    </div>
+
+
+
+    </div>
+
+
+    </div>
+    
+    
+    
+    </div>
+
+
+
+{% endblock %}
